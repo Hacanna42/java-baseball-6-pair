@@ -1,7 +1,13 @@
 package baseball;
 
+import baseball.controller.GameController;
+import baseball.service.ScoreService;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        ScoreService scoreService = new ScoreService();
+        GameController controller = new GameController(scoreService);
+
+        controller.run();
     }
 }
